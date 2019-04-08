@@ -1,14 +1,10 @@
 Package: physion-wine
 Version: 1.01
-Priority:
+Installed-Size: 13308
+Maintainer: Crash and Eddie <crash.eddie123@gmail.com>
+Section: science
 Architecture: all
-Essential:
+Priority: optional
 Depends: wine-stable, wine32, p7zip
-Pre-depends:
-Suggests:
-Installed-Size:
-Maintainer: Crash and Eddie
-Conflicts:
-Replaces:
-Provides:
 Description: Simulador Physion 1.01 via Wine.
+ Physion é um divertido aplicativo, não exatamente um jogo, que oferece a você uma forma divertida de aprender como funciona a física. Você tem mais de 25 cenários predefinidos e você pode interagir com eles em diferentes formas para ver o que acontece.
