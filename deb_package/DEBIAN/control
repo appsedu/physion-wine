@@ -1,0 +1,14 @@
+Package: physion-wine
+Version: 1.01
+Priority:
+Architecture: all
+Essential:
+Depends: wine-stable, wine32, p7zip
+Pre-depends:
+Suggests:
+Installed-Size:
+Maintainer: Crash and Eddie
+Conflicts:
+Replaces:
+Provides:
+Description: Simulador Physion 1.01 via Wine.

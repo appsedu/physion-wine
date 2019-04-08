@@ -1,0 +1,30 @@
+#!/bin/bash
+
+cat /etc/passwd | grep '/home/' | \
+grep -v 'cups\|syslog' | cut -d ':' -f 1 > /tmp/homes.list
+
+rm -rf /tmp/patched-physion/
+rm -rf /tmp/physion-wine.7z
+rm -rf /tmp/Physion.lnk
+rm -rf /tmp/Physion.desktop
+
+while read USUARIO; do
+	runuser -l $USUARIO -c "rm -rf .wine/drive_c/users/$USUARIO/Start\ Menu/Programs/Physion/"
+	runuser -l $USUARIO -c "rm -rf .local/share/applications/wine/Programs/Physion/"
+	runuser -l $USUARIO -c "rm -rf .local/share/desktop-directories/wine-Programs-Physion.directory"
+	runuser -l $USUARIO -c "rm -rf .local/share/icons/hicolor/16x16/apps/1C56_uninstall.0.png"
+	runuser -l $USUARIO -c "rm -rf .local/share/icons/hicolor/16x16/apps/application-x-wine-extension-its.png"
+	runuser -l $USUARIO -c "rm -rf .local/share/icons/hicolor/16x16/apps/BD0F_Physion.0.png"
+	runuser -l $USUARIO -c "rm -rf .local/share/icons/hicolor/16x16/apps/text-x-component.png"
+	runuser -l $USUARIO -c "rm -rf .local/share/icons/hicolor/128x128/apps/BD0F_Physion.0.png"
+	runuser -l $USUARIO -c "rm -rf .local/share/icons/hicolor/48x48/apps/1C56_uninstall.0.png"
+	runuser -l $USUARIO -c "rm -rf .local/share/icons/hicolor/48x48/apps/application-x-wine-extension-its.png"
+	runuser -l $USUARIO -c "rm -rf .local/share/icons/hicolor/48x48/apps/BD0F_Physion.0.png"
+	runuser -l $USUARIO -c "rm -rf .local/share/icons/hicolor/48x48/apps/text-x-component.png"
+	runuser -l $USUARIO -c "rm -rf .local/share/icons/hicolor/32x32/apps/1C56_uninstall.0.png"
+	runuser -l $USUARIO -c "rm -rf .local/share/icons/hicolor/32x32/apps/application-x-wine-extension-its.png"
+	runuser -l $USUARIO -c "rm -rf .local/share/icons/hicolor/32x32/apps/BD0F_Physion.0.png"
+	runuser -l $USUARIO -c "rm -rf .local/share/icons/hicolor/32x32/apps/text-x-component.png"
+	runuser -l $USUARIO -c "rm -rf .config/menus/applications-merged/wine-Programs-Physion-Physion.menu"
+	runuser -l $USUARIO -c "rm -rf .wine/drive_c/Program\ Files\ \(x86\)/Physion/"
+done < /tmp/homes.list
