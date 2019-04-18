@@ -6,4 +6,4 @@ Versão: 1.01
 
 Depends: wine-stable, wine32, p7zip
 
-[Baixe o pacote Debian aqui!](https://drive.google.com/open?id=1tBvGp5P2GGG54OiKGMruszEeYCG9OJZm)
+[Baixe o pacote Debian aqui!](https://drive.google.com/open?id=17UFb_dFCV1QZZkcvds2xgqVjkucRFxAe)
