@@ -27,9 +27,10 @@ while read USUARIO; do
 	runuser -l $USUARIO -c "cp -f /tmp/Physion.lnk .wine/drive_c/users/$USUARIO/Start\ Menu/Programs/Physion/"
 	runuser -l $USUARIO -c "sed 's/USUARIO/$USUARIO/g' /tmp/Physion.desktop > .local/share/applications/wine/Programs/Physion/Physion.desktop"
 	
-	geraShort /home/$USUARIO/.local/share/applications/wine/Programs/Physion/Physion.desktop \
-	/home/$USUARIO/.local/share/applications/wine/Programs/Physion/Physion.desktop \
-	> /home/$USUARIO/Desktop/Physion.desktop
+	# geraShort /home/$USUARIO/.local/share/applications/wine/Programs/Physion/Physion.desktop \
+	# /home/$USUARIO/.local/share/applications/wine/Programs/Physion/Physion.desktop \
+	# > /home/$USUARIO/Desktop/Physion.desktop
+	cp /home/$USUARIO/.local/share/applications/wine/Programs/Physion/Physion.desktop /home/$USUARIO/Desktop/Physion.desktop
 
 	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.cache/"
 	if [ -f /usr/bin/lxpanelctl ]; then
