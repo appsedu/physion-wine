@@ -8,16 +8,16 @@ cd /tmp/patched-physion/
 p7zip -f -k -d /tmp/physion-wine.7z
 cd -
 chmod 777 -R /tmp/patched-physion/
-rm -rf /tmp/patched-physion/.local/share/desktop-directories/
 rm -rf /tmp/patched-physion/.config/
+rm -rf /tmp/patched-physion/.local/share/applications/wine/Programs/Physion/
+rm -rf /tmp/patched-physion/.local/share/desktop-directories/
 
 while read USUARIO; do
 	runuser -l $USUARIO -c "rsync -a /tmp/patched-physion/ /home/$USUARIO/"
 	runuser -l $USUARIO -c "mkdir -p .wine/drive_c/users/$USUARIO/Start\ Menu/Programs/Physion/"
 	runuser -l $USUARIO -c "cp -f /tmp/Physion.lnk .wine/drive_c/users/$USUARIO/Start\ Menu/Programs/Physion/"
-	runuser -l $USUARIO -c "sed 's/USUARIO/$USUARIO/g' /tmp/Physion.desktop > .local/share/applications/wine/Programs/Physion/Physion.desktop"
 	
-	cp /home/$USUARIO/.local/share/applications/wine/Programs/Physion/Physion.desktop /home/$USUARIO/Desktop/Physion.desktop
+	cp /usr/share/applications/physion.desktop /home/$USUARIO/Desktop/physion.desktop
 
 	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.cache/"
 	if [ -f /usr/bin/lxpanelctl ]; then

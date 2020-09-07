@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Physion
+Exec=physion-wine
+Type=Application
+StartupNotify=true
+Icon=BD0F_Physion.0
+StartupWMClass=physion.exe
+Categories=Education;Science;

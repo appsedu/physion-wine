@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Physion
-Exec=env WINEPREFIX="/home/USUARIO/.wine" wine-stable C:\\\\windows\\\\command\\\\start.exe /Unix /home/USUARIO/.wine/dosdevices/c:/users/USUARIO/Start\\ Menu/Programs/Physion/Physion.lnk
-Type=Application
-StartupNotify=true
-Path=/home/USUARIO/.wine/dosdevices/c:/Program Files (x86)/Physion
-Icon=BD0F_Physion.0
-StartupWMClass=physion.exe
-Categories=Education;Science;

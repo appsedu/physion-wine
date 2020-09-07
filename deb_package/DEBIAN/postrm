@@ -27,5 +27,5 @@ while read USUARIO; do
 	runuser -l $USUARIO -c "rm -rf .local/share/icons/hicolor/32x32/apps/text-x-component.png"
 	runuser -l $USUARIO -c "rm -rf .config/menus/applications-merged/wine-Programs-Physion-Physion.menu"
 	runuser -l $USUARIO -c "rm -rf .wine/drive_c/Program\ Files\ \(x86\)/Physion/"
-	rm -rf /home/$USUARIO/Desktop/Physion.desktop 2>/dev/null
+	rm -rf /home/$USUARIO/Desktop/physion.desktop 2>/dev/null
 done < /tmp/homes.list
